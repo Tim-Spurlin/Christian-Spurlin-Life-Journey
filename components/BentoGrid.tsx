@@ -430,25 +430,17 @@ const BentoGrid: React.FC<BentoProps> = ({ onOpenTerminal, onNavigate }) => {
               </div>
               <div className="text-right">
                 <span className="text-2xl font-mono font-bold text-white block">4,281</span>
-                <span className="text-[10px] text-green-400 font-mono">CONTRIBUTIONS • 9 ACTIVE SYSTEMS</span>
+                <span className="text-[10px] text-green-400 font-mono">CONTRIBUTIONS • 8 ACTIVE SYSTEMS</span>
               </div>
             </div>
 
-            {/* 4 Featured Innovation Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {/* 3 Featured Innovation Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div className="bg-white/5 border border-white/10 rounded-xl p-3 space-y-1.5 group-hover:border-hud-cyan/40 transition-colors">
                 <div className="text-[10px] font-mono text-hud-cyan font-bold">AR HARDWARE PATENT</div>
                 <h4 className="text-sm font-bold text-white">TelePrompt Glass</h4>
                 <p className="text-[11px] text-gray-400 leading-snug">
                   First AI AR smart glasses in the US. Microsoft Partner ($150k grant), C++ firmware & HUD.
-                </p>
-              </div>
-
-              <div className="bg-white/5 border border-white/10 rounded-xl p-3 space-y-1.5 group-hover:border-hud-cyan/40 transition-colors">
-                <div className="text-[10px] font-mono text-purple-400 font-bold">KNOWLEDGE DATABASE</div>
-                <h4 className="text-sm font-bold text-white">OfflineRAG</h4>
-                <p className="text-[11px] text-gray-400 leading-snug">
-                  Fully local hybrid retrieval engine. Autonomous HDF5 & LanceDB projection for a private digital twin.
                 </p>
               </div>
 

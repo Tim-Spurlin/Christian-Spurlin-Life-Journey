@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "site": "christiankota-com",
+    "public": "dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "run": {
+          "serviceId": "christiankota",
+          "region": "us-central1"
+        }
+      }
+    ]
+  }
+}

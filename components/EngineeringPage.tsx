@@ -28,7 +28,7 @@ import {
 } from 'lucide-react';
 import { LINKTREE_URL } from '../constants';
 
-type ProjectCategory = 'ALL' | 'AR_HARDWARE' | 'NATIONAL_SECURITY' | 'INSURTECH' | 'KNOWLEDGE_DATABASE';
+type ProjectCategory = 'ALL' | 'AR_HARDWARE' | 'NATIONAL_SECURITY' | 'INSURTECH';
 
 const EngineeringPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>('ALL');
@@ -102,16 +102,6 @@ const EngineeringPage: React.FC = () => {
           }`}
         >
           <ShieldCheck size={14} /> REGULATED AUTOMATION
-        </button>
-        <button
-          onClick={() => setSelectedCategory('KNOWLEDGE_DATABASE')}
-          className={`px-3 py-1.5 rounded transition-all flex items-center gap-1.5 ${
-            selectedCategory === 'KNOWLEDGE_DATABASE'
-              ? 'bg-hud-cyan text-black font-bold shadow-[0_0_15px_rgba(18,181,203,0.4)]'
-              : 'bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 border border-white/5'
-          }`}
-        >
-          <Database size={14} /> KNOWLEDGE DATABASE
         </button>
       </div>
 
@@ -357,90 +347,7 @@ const EngineeringPage: React.FC = () => {
         </section>
       )}
 
-      {/* 4. OFFLINERAG (Hybrid Knowledge Database) */}
-      {(selectedCategory === 'ALL' || selectedCategory === 'KNOWLEDGE_DATABASE') && (
-        <section className="relative bg-gradient-to-br from-[#0a0512] via-[#110820] to-[#050010] border border-purple-500/30 rounded-2xl p-6 md:p-10 overflow-hidden shadow-[0_0_40px_rgba(168,85,247,0.1)]">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
-          
-          <div className="relative z-10 space-y-8">
-            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-4">
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="px-3 py-1 bg-purple-500/20 text-purple-300 border border-purple-500/40 font-mono text-xs font-bold rounded-full">
-                  <Database size={12} className="inline mr-1" />
-                  KNOWLEDGE DATABASE
-                </span>
-                <span className="px-3 py-1 bg-white/10 text-gray-300 font-mono text-xs rounded-full">
-                  64,310+ CHUNKS • 768-D EMBEDDINGS
-                </span>
-              </div>
-              <div className="font-mono text-xs text-purple-400">
-                FULLY LOCAL HYBRID RETRIEVAL ENGINE
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-              <div className="lg:col-span-6 space-y-5">
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-white font-sans tracking-tight mb-2">
-                    OfflineRAG
-                  </h2>
-                  <p className="text-purple-400 font-mono text-sm font-semibold">
-                    THE LIVING ENGINE OF A PRIVATE DIGITAL TWIN
-                  </p>
-                </div>
-                
-                <div className="space-y-4 text-sm text-gray-300 leading-relaxed font-sans">
-                  <p>
-                    <strong>OfflineRAG</strong> is a fully local hybrid knowledge database designed to reclaim the value of a life's data. 
-                    It is an architecture of radical self-love and sovereign memory—ingesting a decade of texts, emails, locations, medical records, and real-time voice streams.
-                  </p>
-                  <p>
-                    Built to operate entirely offline on a 4GB GPU laptop, it refuses to let history remain fragmented or trapped in corporate clouds. 
-                    The system acts as a lifelong companion: a digital twin that remembers everything, senses patterns, and protects context, returning quoted evidence instead of hallucinations.
-                  </p>
-                </div>
-
-                <div className="flex flex-wrap gap-2 pt-2">
-                  <span className="px-2.5 py-1 bg-purple-900/30 text-purple-300 text-xs font-mono rounded border border-purple-500/30">HDF5 LAKE</span>
-                  <span className="px-2.5 py-1 bg-purple-900/30 text-purple-300 text-xs font-mono rounded border border-purple-500/30">LANCEDB</span>
-                  <span className="px-2.5 py-1 bg-purple-900/30 text-purple-300 text-xs font-mono rounded border border-purple-500/30">HYBRID FUSION</span>
-                  <span className="px-2.5 py-1 bg-purple-900/30 text-purple-300 text-xs font-mono rounded border border-purple-500/30">AUTOSYNC</span>
-                </div>
-              </div>
-
-              <div className="lg:col-span-6 space-y-4">
-                <div className="bg-black/60 border border-white/10 p-5 rounded-xl space-y-4">
-                  <h3 className="text-base font-bold text-white font-mono flex items-center gap-2">
-                    <Server size={16} className="text-purple-400" />
-                    TECHNICAL ARCHITECTURE
-                  </h3>
-                  
-                  <div className="space-y-3">
-                    <div className="border-l-2 border-purple-500/50 pl-3">
-                      <div className="text-sm font-bold text-white font-mono">Master Lake (HDF5)</div>
-                      <div className="text-xs text-gray-400 mt-1">Durable ground truth. Stores 64k+ embedded chunks, raw text, and provenance without semantic loss.</div>
-                    </div>
-                    <div className="border-l-2 border-hud-cyan/50 pl-3">
-                      <div className="text-sm font-bold text-white font-mono">Hybrid Projection (LanceDB)</div>
-                      <div className="text-xs text-gray-400 mt-1">Fast vector + Full-Text Search (FTS) indexes on disk. Reciprocal Rank Fusion (RRF) combines lexical certainty with semantic meaning.</div>
-                    </div>
-                    <div className="border-l-2 border-emerald-500/50 pl-3">
-                      <div className="text-sm font-bold text-white font-mono">Dense Proxy & MCP Bridge</div>
-                      <div className="text-xs text-gray-400 mt-1">Rust-based dense proxy for rapid embedding. Streamable MCP bridge exposes precise search tools to local LLM agents.</div>
-                    </div>
-                    <div className="border-l-2 border-yellow-500/50 pl-3">
-                      <div className="text-sm font-bold text-white font-mono">Autonomous Sync Daemon</div>
-                      <div className="text-xs text-gray-400 mt-1">Monitors the lake, debounces changes, rebuilds LanceDB projections (~45s), and hot-reloads indexes without human intervention.</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* 5. SUPPLY CHAIN, SLSA & RESPONSIBLE AI GOVERNANCE */}
+      {/* 4. SUPPLY CHAIN, SLSA & RESPONSIBLE AI GOVERNANCE */}
       <section className="bg-black/40 border border-white/10 rounded-2xl p-6 md:p-8 space-y-6">
         <h2 className="text-xl font-bold text-white font-mono flex items-center gap-2">
           <Activity size={18} className="text-hud-cyan" />
